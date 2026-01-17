@@ -4,6 +4,7 @@ import { auth } from "@/lib/auth"
 import { db } from "@/lib/db"
 import { products, cards, reviews, categories } from "@/lib/db/schema"
 import { eq, sql, inArray, and, or, isNull, lte } from "drizzle-orm"
+import { sendTelegramMessage } from "@/lib/notifications"
 import { revalidatePath } from "next/cache"
 import { setSetting } from "@/lib/db/queries"
 
@@ -367,6 +368,23 @@ export async function saveThemeColor(color: string) {
     await setSetting('theme_color', color)
     revalidatePath('/admin/settings')
     revalidatePath('/')
+}
+
+export async function saveNotificationSettings(formData: FormData) {
+    await checkAdmin()
+
+    const token = (formData.get('telegramBotToken') as string || '').trim()
+    const chatId = (formData.get('telegramChatId') as string || '').trim()
+
+    await setSetting('telegram_bot_token', token)
+    await setSetting('telegram_chat_id', chatId)
+
+    revalidatePath('/admin/notifications')
+}
+
+export async function testNotification() {
+    await checkAdmin()
+    return await sendTelegramMessage("🔔 Test notification from LDC Shop")
 }
 
 async function ensureCategoriesTable() {

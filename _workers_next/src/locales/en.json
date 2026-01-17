@@ -229,6 +229,20 @@
                 "orange": "Orange",
                 "pink": "Pink",
                 "red": "Red"
+            },
+            "notifications": {
+                "title": "Notification Settings",
+                "telegramBotToken": "Telegram Bot Token",
+                "telegramBotTokenPlaceholder": "e.g. 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+                "telegramChatId": "Telegram Chat ID",
+                "telegramChatIdPlaceholder": "e.g. 123456789",
+                "save": "Save Settings",
+                "test": "Send Test Message",
+                "testSuccess": "Test message sent successfully",
+                "testFailed": "Test message failed: {{error}}",
+                "guide": "How to get these?",
+                "guideCreateBot": "1. Search for @BotFather in Telegram, send /newbot to create a bot and get the Token.",
+                "guideGetChatId": "2. Send a message to your bot, then visit https://api.telegram.org/bot<Token>/getUpdates to find your Chat ID (Result -> message -> chat -> id)."
             }
         },
         "export": {

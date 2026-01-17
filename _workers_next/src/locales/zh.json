@@ -229,6 +229,20 @@
                 "orange": "橙色",
                 "pink": "粉色",
                 "red": "红色"
+            },
+            "notifications": {
+                "title": "通知设置",
+                "telegramBotToken": "Telegram 机器人 Token",
+                "telegramBotTokenPlaceholder": "例如 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+                "telegramChatId": "Telegram Chat ID",
+                "telegramChatIdPlaceholder": "例如 123456789",
+                "save": "保存设置",
+                "test": "发送测试消息",
+                "testSuccess": "测试消息发送成功",
+                "testFailed": "测试消息发送失败：{{error}}",
+                "guide": "如何获取设置？",
+                "guideCreateBot": "1. 在 Telegram 中搜索 @BotFather，发送 /newbot 创建机器人并获取 Token。",
+                "guideGetChatId": "2. 给你的机器人随便发条消息，然后访问 https://api.telegram.org/bot<Token>/getUpdates 获取 Chat ID (Result -> message -> chat -> id)。"
             }
         },
         "export": {
